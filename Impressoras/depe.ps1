@@ -18,7 +18,7 @@ if ((Test-Admin) -eq $false)  {
 exit
 }
 
-'running with full privileges'﻿
+'running with full privileges'
  
  
  # - ################### DRIVER LEXMARK UNIVERSAL ###################
