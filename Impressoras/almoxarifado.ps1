@@ -1,4 +1,25 @@
-﻿# - ################### DRIVER LEXMARK UNIVERSAL ###################
+﻿param([switch]$Elevated)
+
+function Test-Admin {
+  $currentUser = New-Object Security.Principal.WindowsPrincipal $([Security.Principal.WindowsIdentity]::GetCurrent())
+  $currentUser.IsInRole([Security.Principal.WindowsBuiltinRole]::Administrator)
+}
+
+if ((Test-Admin) -eq $false)  {
+    if ($elevated) 
+    {
+        # tried to elevate, did not work, aborting
+    } 
+    else {
+        Start-Process powershell.exe -Verb RunAs -ArgumentList ('-noprofile -noexit -file "{0}" -elevated' -f ($myinvocation.MyCommand.Definition))
+}
+
+exit
+}
+
+'running with full privileges'
+
+# - ################### DRIVER LEXMARK UNIVERSAL ###################
 
 $porta = "porta_almox";
 $ip_impressora = "172.19.51.25";
@@ -6,7 +27,7 @@ $nome_impressora = "ALMOXARIFADO";
 $modelo_driver = "Lexmark Universal v2 XL";           # esse modelo de impressora esta no arquivo .inf;
                                                       # deve ser exatamente igual ao que esta no arquivo .inf
 $arquitetura = "Windows x64";
-$local_drive = "C:\Instaladores\scriptsImpressoras\LMUD1p40.inf" 
+$local_drive = "C:\Instaladores\scriptsImpressoras\Lexmark-MX710-Universal-V2\LMUD1p40.inf" 
 
 
 # http://woshub.com/manage-printers-and-drivers-from-the-command-line-in-windows-8/
