@@ -6,7 +6,7 @@ $nome_impressora = "BIBLIOTECA";
 $modelo_driver = "Lexmark Universal v2 XL";           # esse modelo de impressora esta no arquivo .inf;
                                                       # deve ser exatamente igual ao que esta no arquivo .inf
 $arquitetura = "Windows x64";
-$local_drive = "\\172.19.0.10\publico\Lexmark-MX710-Universal-V2\LMUD1p40.inf" 
+$local_drive = "C:\Instaladores\scriptsImpressoras\Lexmark-MX710-Universal-V2\LMUD1p40.inf"
 
 
 # http://woshub.com/manage-printers-and-drivers-from-the-command-line-in-windows-8/
