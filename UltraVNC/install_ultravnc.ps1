@@ -51,7 +51,7 @@ if ((gwmi win32_operatingsystem | select osarchitecture))
 
     cd 'C:\Instaladores\ultravnc'
 
-    .\UltraVNC_1_2_24_X64_Setup.exe /LOADINF='C:\Instaladores\ultravnc\Install_64.txt' /VERYSILENT 
+    .\UltraVNC_1_2_24_X64_Setup.exe /LOADINF='C:\Instaladores\ultravnc\Install_64.txt' /VERYSILENT /PASSWORD=stanlee
 
     #remove atalhos do menu iniciar
 
@@ -63,13 +63,13 @@ if ((gwmi win32_operatingsystem | select osarchitecture))
 
          Start-Sleep -Seconds 10
 
-    rename-item -path  'C:\Program Files\uvnc bvba\UltraVNC\ultravnc.ini'  -newname ultravnc.ini.old
+    #rename-item -path  'C:\Program Files\uvnc bvba\UltraVNC\ultravnc.ini'  -newname ultravnc.ini.old
     
     #movendo arquivo de config do ultravnc
 
         Start-Sleep -Seconds 3
 
-    Copy-Item C:\Instaladores\ultravnc\ultravnc_64.ini  -destination 'C:\Program Files\uvnc bvba\UltraVNC\ultravnc.ini'
+    #Copy-Item C:\Instaladores\ultravnc\ultravnc_64.ini  -destination 'C:\Program Files\uvnc bvba\UltraVNC\ultravnc.ini'
 
     # restart vnc para pegar cofig novas
 
