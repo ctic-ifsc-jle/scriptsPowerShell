@@ -39,7 +39,7 @@ if ((gwmi win32_operatingsystem | select osarchitecture))
 
     Get-Service -DisplayName "uvnc_service" | Stop-Service
 
-    .\unins000.exe /SP- /VERYSILENT  -EA SilentlyContinue
+    .\unins000.exe /SP- /VERYSILENT  /NORESTART -EA SilentlyContinue
 
      Start-Sleep -Seconds 10
 
@@ -51,7 +51,7 @@ if ((gwmi win32_operatingsystem | select osarchitecture))
 
     cd 'C:\Instaladores\ultravnc'
 
-    .\UltraVNC_1_2_24_X64_Setup.exe /LOADINF='C:\Instaladores\ultravnc\Install_64.txt' /VERYSILENT /PASSWORD=stanlee
+    .\UltraVNC_1_2_24_X64_Setup.exe /LOADINF='C:\Instaladores\ultravnc\Install_64.txt' /VERYSILENT /PASSWORD=stanlee /NORESTART
 
     #remove atalhos do menu iniciar
 
