@@ -21,6 +21,14 @@ exit
 
 ########################################################################################################################################
 
+# descompactando arquivos
+
+cd  C:\Instaladores\ultravnc\
+
+7z x -y   C:\Instaladores\ultravnc\ultravnc.7z
+
+########################################################################################################################################
+
 if ((gwmi win32_operatingsystem | select osarchitecture))
 {
     #para sistemas 64 bits
